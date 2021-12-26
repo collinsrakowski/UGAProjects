@@ -1,0 +1,33 @@
+//#include <iostream>
+//#include <cstdlib>
+//#include <string>
+//#include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <string.h>
+
+
+
+int main(int argc, char *args[]) {
+
+    FILE *input;
+    char filename[1000];
+
+    for (int i = 1; i < argc; i++) {
+        //  input = fopen(args[i], "r"); // open file
+        fopen(args[i], "r");
+    if (args[i] == NULL) {
+        printf("Cannot open file \n");
+        exit(0);
+    }
+
+    input = fopen(args[i], "r"); // read contents from file
+    fgets(filename, 1000, input);
+    printf(filename);
+    }
+
+    fclose(input);
+
+    return 0;
+}

@@ -1,0 +1,16 @@
+Rakowski-Collins-lab05/:
+total 48
+-rw-r--r--. 1 myid  800 Nov  4 12:58 firstline.c
+-rw-r--r--. 1 myid 1385 Nov  4 15:48 lastline.c
+-rw-r--r--. 1 myid 1693 Nov  4 15:59 longestline.c
+-rw-r--r--. 1 myid  285 Nov  4 22:07 makefile
+-rw-r--r--. 1 myid  323 Nov  4 13:55 README
+-rw-r--r--. 1 myid    0 Nov  4 22:08 rec13313
+-rw-r--r--. 1 myid   25 Nov  4 15:51 test1
+-rw-r--r--. 1 myid   24 Nov  4 15:51 test2
+-rw-r--r--. 1 myid   12 Nov  4 15:51 test3
+-rw-r--r--. 1 myid   13 Nov  4 15:51 test4
+-rw-r--r--. 1 myid   11 Nov  4 15:51 test5
+-rw-r--r--. 1 myid    4 Nov  4 15:51 test6
+-rw-r--r--. 1 myid   16 Nov  4 15:51 test7
+/home/myid/ccr06550/Rakowski-Collins-lab05/:/home/myid/csci-1730

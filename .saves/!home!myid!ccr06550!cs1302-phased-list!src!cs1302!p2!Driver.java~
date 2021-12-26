@@ -1,0 +1,60 @@
+package cs1302.p2;
+
+import cs1302.adt.StringList;
+
+/**
+ * Driver contains all the commands I used to test my methods.
+ */
+public class Driver {
+    public static void main(String args[]) {
+
+/*        StringList test1 = new LinkedStringList();
+        System.out.println(test1.get(2));
+        test1.remove(0);
+        test1.isEmpty();
+        System.out.println(test1.add(2, "c")); // doesnt add to index one just adds to first point
+        test1.append("z");
+        System.out.println(test1.add(4, "@")); // this should have a null space node or nah?
+        System.out.println(test1.slice(0, 0));
+        System.out.println(test1.slice(0, 1));
+        System.out.println(test1.makeString("<",".",">")); */
+
+        StringList testL2 = new ArrayStringList(); // this should basically test empty
+        System.out.println("\n" + "TEST CASE L2");
+//        System.out.println(testL2.clear()); // this should be only case of this
+        // this cant mis print anything lol
+//        System.out.println(testL2.get(0));
+//      System.out.println(testL2.get(-8));
+//      System.out.println(testL2.get(8));
+// ???????        testL2.makeString("<",".",">");
+// worked        System.out.println(testL2.slice(0,0)); // should result in null??
+// worked        System.out.println(testL2.slice(-8,8));
+// worked        System.out.println(testL2.slice(0,8));
+// w        System.out.println(testL2.remove(-2));
+// w        System.out.println(testL2.remove(0));
+// w        System.out.println(testL2.remove(2));
+        StringList tL3 = new LinkedStringList();
+
+        System.out.println("\n" + "TEST CASE L3");
+// everything works except for I changed slice so it should work
+        System.out.println(tL3.isEmpty());
+        System.out.println(tL3.size());
+        tL3.add(0,"b"); // what if you dont add to index zero, what is supposed to happen
+        tL3.append("c");
+        tL3.prepend("a");
+        tL3.add(3, "d");
+        System.out.println(tL3.toString());
+        System.out.println(tL3.size());
+        System.out.println(tL3.makeString("<",".",">"));
+        System.out.println(tL3.isEmpty());
+        System.out.println(tL3.get(0));
+        System.out.println(tL3.get(3));
+        System.out.println(tL3.remove(0));
+        System.out.println(tL3.remove(2));
+        System.out.println(tL3.toString());
+        System.out.println(tL3.size());
+        System.out.println(tL3.slice(1,2)); // changed slice
+        tL3.clear();
+        System.out.println(tL3.size());
+    } // main
+} // main

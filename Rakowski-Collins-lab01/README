@@ -1,0 +1,26 @@
+Collins Rakowski (811-261-111)
+
+Instruction on how to compile and run the code:
+    To compile the code you need to use the following commmand-
+        "g++ -o lab01 lab01.cpp"
+    To run the code you need to use the following command-
+        "./lab01"
+
+ccr06550@csci-odin:~/Rakowski-Collins-lab01$ gcc --version
+gcc (GCC) 10.1.0
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+ccr06550@csci-odin:~/Rakowski-Collins-lab01$ g++ --version
+g++ (GCC) 10.1.0
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+ccr06550@csci-odin:~/Rakowski-Collins-lab01$ gdb --version
+GNU gdb (GDB) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

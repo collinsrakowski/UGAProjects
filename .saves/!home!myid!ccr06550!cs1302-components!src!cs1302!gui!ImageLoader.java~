@@ -1,0 +1,62 @@
+package cs1302.gui;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Priority;
+
+
+public class ImageLoader extends VBox {
+
+    //  Stage stage;
+//    Scene scene;
+
+    VBox vbox;
+
+    HBox urlLayer;
+    TextField urlField;
+    Button loadImage;
+
+    ImageView imgView;
+
+
+    private static final String DEFAULT_IMG =
+        "https://i.pinimg.com/originals/e5/34/82/e534825a5701b9eefb76635678ea9390.jpg";
+    //        "http://cobweb.cs.uga.edu/~mec/cs1302/gui/default.png";
+
+    /** Default height and width for Images */
+    private static final int DEF_HEIGHT = 500;
+    private static final int DEF_WIDTH = 500;
+
+    public ImageLoader() {
+        super();
+        urlLayer = new HBox(10);
+        urlField = new TextField("https://");
+        loadImage = new Button("Load");
+        Image img = new Image(DEFAULT_IMG, DEF_HEIGHT, DEF_WIDTH, false, false);
+        imgView = new ImageView(img);
+        imgView.setPreserveRatio(true);
+        this.getChildren().addAll(urlLayer, imgView);
+        loadImage.setOnAction(this::loadImage);
+    } // ImageLoader
+
+    private void loadImage(ActionEvent e) {
+
+        try {
+            Image newImg = new Image(urlField.getText(), DEF_HEIGHT, DEF_WIDTH, false, false);
+            imgView.setImage(newImg);
+        } catch(IllegalArgumentException iae) {
+            System.out.println("The supplied URL is invalid");
+        } // try
+
+    } // loadImage
+
+} // public class

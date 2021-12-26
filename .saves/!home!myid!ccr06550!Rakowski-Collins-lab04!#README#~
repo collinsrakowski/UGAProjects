@@ -1,0 +1,93 @@
+This contains all my answers and stuff:
+
+    Warm Up Activity:
+
+1.
+(a)
+    Symbol Name     Type    Memory Address  Value
+    integer1        int     80              10
+    p1              int *   84              80
+    p2              int **  92              84
+(b)
+    The output is "interger1 = 11"
+(c)
+    The output for both will be "11."
+(d)
+    This command outputs "10." The post increment operator has a higher precendent. This line essentially adds
+    one to the pointer and it does not affect the value held in the pointer.
+(e)
+    In part C, the value held in integer1 is directly incremented. In part D, the post increment operator is only applied to the pointer,
+    not the value that is pointed to by the pointer.
+
+2.
+(a)
+    p2 represents a pointer that points to another pointer.
+(b)
+    This program will not compile since p1 and p2 are different types. P1 is a pointer and P2 is a pointer to a pointer type.
+
+
+    Array and Pointers Activity:
+
+1.
+(a)
+    iarray is an array variable that points to the first element in the array.
+(b)
+    The value of iarray is the memory address of the first value in the array.
+(c)
+    The dereference iarray will output the first value in the array which is zero in this case.
+(d)
+    The terminal prints: "
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+"
+(e)
+    The output did not change. iarray[i] = i; and *(p1 + i) = i; are equivalent and doing the same task.
+(f)
+    The output did not change. This is doing the same thing as proper array notation.
+(g)
+    The output has changed. The output is incrementing the value but not showing the corresponding memory location.
+    Random values are getting referenced which are probably unused.
+
+
+    Functions, Pointers, and Tricky Declarations Activity:
+
+1.
+    The first output using the divBy2(x); function is “22.” The second output using the divBy(&2); function is  “11.”
+     Variable n is passed-by-reference as denoted by the &variable. The main function is essentially dividing by two twice.
+2.
+    For line 16 “&” is used when passing as the function is expecting a pointer variable. The & passes the memory address rather than the actual value.
+
+
+    Const Pointers Activity:
+
+1.
+(a)
+    For part a, all the statements of code are valid.
+(b)
+     For part b, “*p2 = 11” is invalid. Since int is declared a constant the value cannot be changed.
+(c)
+    For part c, “*p3 = 11” and “p3 = &y” are invalid. Both the int and the pointer are declared constant.
+    The pointer address and the value of the variable cannot be changed.
+
+2.
+(a)
+    In part A, “foo()++;” is an invalid command. The return value of foo() is constant therefore it cannot be incremented.
+(b)
+    In part b, “(*p1)++;, bar()++;, and (*bar())++;” are invalid commands.
+    (*p1)++; command does not work because int stored at p1 is declared a constant, therefore It cannot be incremented.
+    Bar()++; does not work because in the bar function, the return type is a constant pointer.
+    The bar function cannot increment the memory address associated with the function output because it is declared a constant.
+    (*bar())++; the value stored in the memory address is declared constant, and it cannot be changed.
+(c)
+    In part c, “(*p2)++;” and “baz()++” are invalid commands.
+    (*p2)++; in part c, the value stored in at the memory address p2 is declared constant and this is why it cannot be incremented.
+     Baz() returns the value of a constant pointer, therefore when you try to increment the function, the memory address is being incremented.
+     However, this throws an error because the pointer is a constant and cannot be changed.

@@ -1,0 +1,22 @@
+package cs1302.shapes;
+
+public class ShapeDriver {
+
+    /**
+     * Main method prints all the inherited classes to shape.
+     * Prints their name, area, and shape of the shapes.
+     */
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[] {
+            new Ellipse(1.1, 2.5),
+            new Circle(1.5),
+            new Square(2.0),
+            new Rectangle(2.0, 4.0)
+        };
+        for ( int i = 0; i <= 3; i++) {
+            System.out.println("\n" + shapes[i].getName());
+            System.out.println(shapes[i].getArea());
+            System.out.println(shapes[i].getPerimeter());
+        } //for
+    } // main
+} // class shape driver

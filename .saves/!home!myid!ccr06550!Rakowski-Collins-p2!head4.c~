@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[]) {
+   int option;
+   // put ':' at the starting of the string so compiler can distinguish between '?' and ':'
+   while((option = getopt(argc, argv, ":nc")) != -1){ //get option from the getopt() method
+//       for(int optind = 1; optind < argc; optind++) {
+           switch(option){
+               //For option i, r, l, print that these are options
+           case 'n':
+               for(int optind = 1; optind < argc; optind++) {
+                   printf("Given option: %c\n", option);
+               }
+           case 'c':
+               printf("Given option: %c\n", option);
+           case '?': //used for some unknown options
+//               printf("unknown option: %c\n", optopt);
+               break;
+           default:
+
+               break;
+           } // switch
+           //     } // for
+   } // while
+
+
+   /*
+   for(; optind < argc; optind++){ //when some extra arguments are passed
+      printf("Given extra arguments: %s\n", argv[optind]);
+   }
+   */
+}

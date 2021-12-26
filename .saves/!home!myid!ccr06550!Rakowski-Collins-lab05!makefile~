@@ -1,0 +1,15 @@
+compile:
+	gcc -Wall -pedantic-errors -o firstline firstline.c
+	gcc -Wall -pedantic-errors -o lastline lastline.c
+	gcc -Wall -pedantic-errors -o longestline longestline.c
+
+
+run: compile
+	./firstline test1 test2 test3 test4 test5 test6 test7
+	./lastline	test1 test2 test3 test4 test5 test6 test7
+	./longestline  test1 test2 test3 test4 test5 test6 test7
+
+clean:
+	rm -f firstline
+	rm -f lastline
+	rm -f longestline

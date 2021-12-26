@@ -1,0 +1,8 @@
+compile:
+	gcc -Wall -pedantic-errors -o cat cat.c
+
+run: compile
+	./cat
+
+clean:
+	rm -f cat

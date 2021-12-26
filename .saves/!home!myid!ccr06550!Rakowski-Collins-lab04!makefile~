@@ -1,0 +1,14 @@
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
+
+compile: main.o
+		 $(CC) $(LFLAGS) -o main
+
+run: compile
+    ./main
+
+clean:
+         rm -f main
+         rm -f *.o

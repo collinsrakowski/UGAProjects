@@ -1,0 +1,16 @@
+package cs1302.shapes;
+/**
+ * Square class contains methods that extend Rectangle
+ * and contains additional methods.
+ */
+public class Square extends Rectangle {
+
+    /**
+     * Constructs a square.
+     * @param height determines the size of the square
+     */
+    public Square(double height) {
+        super(height, height);
+        setName("Square");
+    } // square
+} // Square class extends rectangle

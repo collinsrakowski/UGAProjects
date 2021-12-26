@@ -1,0 +1,55 @@
+package cs1302.hw03.impl;
+
+import cs1302.hw03.contract.Drivable;
+
+/**
+ * This class represents a truck. It implements
+ * the {@link cs1302.hw03.contract.Drivable} interface.
+ *
+ */
+public class Truck implements Drivable {
+    private double maxSpeed;
+    private double speed;
+
+    /**
+     * Constructs a {@code Truck} object with a specified
+     * maximum speed. The maximum speed of the object
+     * will default to zero if a negative value is given.
+     * @param maxSpeed the maximum speed of the {@code Truck}
+     */
+    public Truck(double maxSpeed) {
+        speed = 0;
+        if (maxSpeed >= 0) {
+            this.maxSpeed = maxSpeed;
+        } // if
+    } // Truck
+
+    /**
+     * Determines whether the {@code Truck} can speed up.
+     * @param amount the speed at which the {@code Truck} is going
+     * @return success determines whether the {@code Truck} could speed up
+     */
+    public boolean speedUp(double amount) {
+        boolean success = false;
+        if (speed + amount <= maxSpeed) {
+            speed += amount;
+            success = true;
+        } // if
+        return success;
+    } // speedUp
+
+    /**
+     * Determines whether the {@code Truck} can slow down.
+     * @param amount the speed at which the {@code Truck} is going
+     * @return success determines whether the {@code Truck} could slow down
+     */
+    public boolean slowDown(double amount) {
+        boolean success = false;
+        if (speed - amount >= 0) {
+            speed -= amount;
+            success = true;
+        } // if
+        return success;
+    } // slowDown
+
+} // Class

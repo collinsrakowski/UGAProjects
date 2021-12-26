@@ -1,0 +1,5 @@
+Collins Rakowski (811-261-111)
+    To Compile and run code type the following commands into the terminal:
+    1. "make clean" - removes the previously compiled code.
+    2. "make" - Make compiles all three parts of code.
+    3. "make run" - This runs all the different parts in succession. Starts with primesum and ends with endtime.

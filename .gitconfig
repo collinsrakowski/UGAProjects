@@ -1,0 +1,5 @@
+[user]
+	name = Collins Rakowski
+	email = ccr06550@uga.edu
+[alias]
+	adog = log --all --decorate --oneline --graph

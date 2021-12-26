@@ -1,0 +1,8 @@
+compile:
+     gcc -Wall -pedantic-errors -o head3 head3.c
+
+run: compile
+     ./head3.c
+
+clean:
+     rm -f head3

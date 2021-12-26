@@ -1,0 +1,10 @@
+package cs1302.utility;
+public class MyMethods {
+    public static int maxCheck(int one, int two) {
+	if ( one > two ) {
+	    return one;
+	} else {
+	    return two;
+	}
+    }
+}

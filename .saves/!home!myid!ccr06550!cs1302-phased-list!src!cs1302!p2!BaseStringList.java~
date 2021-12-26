@@ -1,0 +1,89 @@
+package cs1302.p2;
+
+import cs1302.adt.StringList;
+
+/**
+ * BaseString implements StringList interface and has helper methods used in main.
+ */
+public abstract class BaseStringList implements StringList {
+    protected int size;
+
+    /**
+     * BaseStringList is a constructor method.
+     */
+    public BaseStringList() {
+        super();
+        this.size = 0;
+    }
+
+    /**
+     * Appends an item to a string list.
+     * @param item a string that is put in the list
+     * @return item added is returned
+     */
+    @Override
+    public boolean append(String item) {
+        return this.add(size, item);
+    } // append
+
+    /**
+     * isEmpty checks to see if there are any items in the list.
+     * @return true is the string list is empty
+     */
+    @Override
+    public boolean isEmpty() {
+        if (this.size == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } //is empty
+
+    /**
+     * makeString uses the list and starting, seperating, and ending characters
+     * to make a string.
+     * @param start specified starting
+     * @param sep specified separation character
+     * @param end specifiec ending character
+     * @return a string representation of this string list that begins with start and
+     * ends with end, with every string in the string list separated by sep.
+     */
+    @Override
+    public String makeString(String start, String sep, String end) {
+        String temp = start;
+        for (int i = 0; i < this.size - 1; i++) {
+            temp += get(i) + sep;
+        } // for
+        temp += get(size() - 1) + end;
+        return temp;
+    } // makeString
+
+    /**
+     * prepend the item to the sting list and every item after it is moved to the left.
+     * @param item is the string that is prepended in the list
+     * @return true if the list has changed as a result of call
+     */
+    @Override
+    public boolean prepend(String item) {
+        return this.add(0, item);
+    } //prepend
+
+    /**
+     * size checks how many items there are in the list.
+     * @return the number of items in the string list.
+     */
+    @Override
+    public int size() {
+        return this.size;
+    } //size
+
+    /**
+     * toString puts the list into an array format.
+     * @return makeString("[",",","]");
+     */
+    @Override
+    public String toString() {
+        return makeString("[", ",", "]");
+    } //toString
+
+}

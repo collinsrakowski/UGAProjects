@@ -1,0 +1,183 @@
+package cs1302.p2;
+
+import cs1302.adt.StringList;
+import cs1302.p2.BaseStringList;
+import cs1302.adt.FancyStringList;
+
+/**
+ * ArrayStringList extends BaseStringList and contains helper methods.
+ */
+public class ArrayStringList extends BaseStringList {
+
+    private String[] items;
+
+    /**
+     * ArrayStringList is a constructor for the ArrayStringList class.
+     */
+    public ArrayStringList() {
+        super();
+        items = new String[size()];
+    }
+
+    /**
+     * add inserts an item into the string list at the specified position.
+     * @param index is the place in which the item is being added
+     * @param item is the string that is being added to the list
+     * @return true if the string is successfully added to the list
+     */
+    @Override
+    public boolean add(int index, String item) throws IndexOutOfBoundsException,
+        NullPointerException, IllegalArgumentException {
+        String[] tempArray;
+        if (size() >= items.length) {
+            tempArray = new String[((3 * (items.length)) / 2) + 3];
+        } else {
+            tempArray = new String[items.length];
+        } // else
+
+        if (item == null) {
+            throw new NullPointerException("The item is null");
+        } else if (item.length()  == 0) {
+            throw new IllegalArgumentException("The item is empty");
+        } else if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException("Index is out of range");
+        }
+        for (int i = 0; i < items.length; i++) {
+            tempArray[i] = items[i];
+        } // for
+        for (int i = tempArray.length - 1; i > index; i--) {
+            tempArray[i] = tempArray[i - 1];
+        } // for
+        tempArray[index] = item;
+        items = tempArray; // CHECK THIS
+        size++;
+        return true;
+    } //add
+
+    /**
+     * clear removes all of the items from the string list.
+     */
+    @Override
+    public void clear() {
+        String[] tempArr = new String[0];
+        items = tempArr;
+        size = 0;
+    } //clear
+
+    /**
+     * get gets the item at the index position in the list.
+     * @param index is the location of the string in the list
+     * @return the items at the specified index position in this string list
+     */
+    @Override
+    public String get(int index) throws IndexOutOfBoundsException {
+        if (isEmpty() || index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is not in range or empty.");
+        }
+        return items[index];
+    } //get
+
+    /**
+     * remove removes the item at the index in the string list.
+     * @param index is the location of the string in the list
+     * @return returns the item remove in the list
+     */
+    @Override
+    public String remove(int index) throws IndexOutOfBoundsException {
+        String returnString = items[index];
+        String[] tempArr = new String[items.length - 1];
+        if (isEmpty() || index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index is not in range or empty.");
+        }
+        for (int j = 0; j < index; j++) {
+            tempArr[j] = items[j];
+        } // for
+        for ( int i = index; i < items.length - 1; i++) {
+            tempArr[i] = items[i + 1];
+        } // for
+        items = tempArr;
+        size--;
+        return returnString;
+    } // remove
+
+    /**
+     * slice uses the params to cut out a part of list to create a new list.
+     * @param start the left endpoint of the slice
+     * @param stop the right endpoint of the slice
+     * @return a new string with the items start to stop
+     */
+    @Override
+    public StringList slice(int start, int stop) throws IndexOutOfBoundsException {
+        if (start < 0 || stop > size() || start > stop || isEmpty()) {
+            throw new IndexOutOfBoundsException("Illegal endpoint index value or list is empty.");
+        } // if
+        StringList stringArray = new ArrayStringList();
+        for ( int i = start; i < stop; i++) {
+            stringArray.append(get(i));
+        } // for
+        return stringArray;
+    } // StringList
+
+    /**
+     * ArrayStringList is a constructor that makes a deep copy of another StringList.
+     * @param other another stringList is used to be the list to make the copy
+     */
+    public ArrayStringList(StringList other) {
+//        StringList copy = new ArrayStringList();
+        super();
+        this.size = other.size();
+        this.items = new String[size()];
+        for (int i = 0; i <= size() - 1; i++) {
+            this.items[i] = other.get(i);
+        }
+
+/*        String[] tempArray = new String[other.size()];
+
+        //      items = new String[other.size()];
+        for (int i = 0; i <= size() ; i++) {
+            tempArray[i] = other.get(i);
+            } */
+    } // ASL other
+
+    /**
+     * Creates a new FancyStringList with select items from the strarting index to the ending index
+     * stepping by the step int value.
+     *
+     * @param start beginning starting position of the slice
+     * @param stop ending index but does not include item at stop
+     * @param step step - 1 the amount of objects to skip over before being added
+     * @return FancyStringList creates a deep copy of linked list
+     * @throws IndexOutOfBoundsException if start of stop are not between zero and size
+     * or start is greater than stop or step is less than 1
+     */
+    @Override
+    public FancyStringList slice(int start, int stop, int step) throws IndexOutOfBoundsException {
+        if (start < 0 || stop > size() || start > stop || step < 1) {
+            throw new IndexOutOfBoundsException("Illegal endpoint index value or list is empty.");
+        } else if (step < 1) { // if
+            throw new IndexOutOfBoundsException("Step must be 1 or greater");
+        }
+        FancyStringList fancyString = new ArrayStringList();
+        int counter = 0;
+        for ( int i = start; i < stop; i = start + (counter * step)) {
+            fancyString.append(get(i));
+            counter++;
+        }
+        return fancyString;
+    } // fancy slice
+
+    /**
+     * Creates a FancyStringList that takes the items in the list and displays them
+     * in reverse order.
+     *
+     * @return FancyStringList puts the StringList in reverse order
+     */
+    @Override
+    public FancyStringList reverse() { // WORKS YAY :)
+        FancyStringList fancyString = new ArrayStringList();
+        for ( int i = 0 ; i < size; i++) {
+            fancyString.prepend(get(i));
+        } // for
+        return fancyString;
+    } // reverse
+} //ArrayStringList

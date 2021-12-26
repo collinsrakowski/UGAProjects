@@ -1,0 +1,11 @@
+package cs1302.game;
+
+import cs1302.game.gametools.GameMethods;
+
+ public class MinesweeperDriver {
+
+     public static void main(String[] args) {
+         GameMethods.getIntro();
+         GameMethods.getOutro();
+     } // main
+ } // MinesweeperDriver

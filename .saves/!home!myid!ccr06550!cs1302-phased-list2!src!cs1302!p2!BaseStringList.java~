@@ -1,0 +1,192 @@
+package cs1302.p2;
+
+import cs1302.adt.StringList;
+import cs1302.adt.FancyStringList;
+
+/**
+ * BaseString implements StringList interface and has helper methods used in main.
+ */
+public abstract class BaseStringList implements FancyStringList { // implement Stringlist
+    protected int size;
+
+    /**
+     * BaseStringList is a constructor method.
+     */
+    public BaseStringList() {
+        super();
+        this.size = 0;
+    }
+
+    /**
+     * Appends an item to a string list.
+     * @param item a string that is put in the list
+     * @return item added is returned
+     */
+    @Override
+    public boolean append(String item) {
+        return this.add(size, item);
+    } // append
+
+    /**
+     * isEmpty checks to see if there are any items in the list.
+     * @return true is the string list is empty
+     */
+    @Override
+    public boolean isEmpty() {
+        if (this.size == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } //is empty
+
+    /**
+     * makeString uses the list and starting, seperating, and ending characters
+     * to make a string.
+     * @param start specified starting
+     * @param sep specified separation character
+     * @param end specifiec ending character
+     * @return a string representation of this string list that begins with start and
+     * ends with end, with every string in the string list separated by sep.
+     */
+    @Override
+    public String makeString(String start, String sep, String end) {
+        if (isEmpty() == true) {
+            return start + end;
+        } // if
+        String temp = start;
+        for (int i = 0; i < size() - 1; i++) {
+            temp += get(i) + sep;
+        } // for
+        temp += get(size() - 1) + end;
+        return temp;
+    } // makeString
+
+    /**
+     * prepend the item to the sting list and every item after it is moved to the left.
+     * @param item is the string that is prepended in the list
+     * @return true if the list has changed as a result of call
+     */
+    @Override
+    public boolean prepend(String item) {
+        return this.add(0, item);
+    } //prepend
+
+    /**
+     * size checks how many items there are in the list.
+     * @return the number of items in the string list.
+     */
+    @Override
+    public int size() {
+        return this.size;
+    } //size
+
+    /**
+     * toString puts the list into an array format.
+     * @return makeString("[",",","]");
+     */
+    @Override
+    public String toString() {
+        return makeString("[", ", ", "]");
+    } //toString
+
+    /**
+     *Adds the items of the StringList to the list at given index.
+     *
+     * @param index index in list to insert item(s)
+     * @param items StringList of the string items to add
+     * @return true when items are successfully added th the list
+     * @throws IndexOutOfBoundsException when the index is not within lists bounds
+     * @throws NullPointerException when the StringList is null
+     */
+    @Override // NEW
+    public boolean add(int index, StringList items) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("The index must be valid and within bounds.");
+        } else if (items == null) {
+            throw new NullPointerException("The StringList must not be null!");
+        } // if
+//        int z = items.size();
+        //      StringList tempList = items;
+        int counter = 0;
+        for ( int i = 0; i <= items.size() - 1; i++) {
+            if (get(i).equals(items.get(i))) {
+                counter++;
+//                System.out.println("1");
+            } // for
+        }
+        if (counter == items.size()) {
+            String[] copy = new String[size()];
+            for (int i = 0; i < copy.length; i++) {
+                copy[i] = items.get(i);
+            } // for
+            for (int i = 0; i < copy.length; i++) {
+                add(index + i, copy[i]);
+            }
+        } else {
+            for (int i = 0; i < items.size(); i++) {
+                add(index + i, items.get(i));
+            }
+        }
+        return true;
+    } // add IMPLEMENT
+
+    /**
+     * Appends an item to a string list.
+     * @param items a StringList items that is put in the list
+     * @return true if the string is appended
+     */
+    @Override // NEW
+    public boolean append(StringList items) {
+        return this.add(size, items);
+    } // append implement
+
+    /**
+     * Uses indexOf method to determine if a target string is contained in a list at after a
+     * certain index.
+     * @return true if in the list, false otherwise.
+     */
+    @Override // NEWS
+    public boolean contains(int start, String target) { // done
+        if (start < 0 || start > size) { // This I ADDED AND I THINK THIS IS RIGHT
+            return false;
+        }
+        if (indexOf(start, target) >= 0) {
+            return true;
+        } else { // if
+            return false;
+        } // else
+    } // contains implement
+
+    /**
+     * Loops through the list and determines if a target string is contained in the list
+     * and returns index in list of that value.
+     *
+     * @param start starting index
+     * @param target target string to find index of
+     * @return int value of index of string item, '-1' if not in list
+     */
+    @Override // NEW
+    public int indexOf(int start, String target) { // done
+        if (start < 0 || start > size) {
+            return -1;
+        }
+        for ( int i = start; i < size; i++) {
+            if (get(i).equals(target)) {
+                return i;
+            } // if
+        } // for
+        return -1;
+    } // indexof implement
+
+    /**
+     * prepend the item to the sting list and every item after it is moved to the left.
+     * @param items is the string that is prepended in the list
+     * @return true if the list has changed as a result of call
+     */
+    @Override //NEW
+    public boolean prepend(StringList items) {
+        return this.add(0, items);
+    } // prepend implement
+
+}

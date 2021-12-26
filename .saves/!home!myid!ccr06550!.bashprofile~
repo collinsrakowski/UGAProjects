@@ -1,0 +1,10 @@
+# cs1730 paths
+export GCC_HOME=/usr/local/gcc/10.1.0
+export GDB_HOME=/usr/local/gdb/9.2
+
+# update link library path
+export LD_LIBRARY_PATH=$GCC_HOME/lib64:$LD_LIBRARY_PATH
+
+# update exec paths
+export PATH=$GDB_HOME/bin:$PATH
+export PATH=$GCC_HOME/bin:$PATH

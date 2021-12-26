@@ -1,0 +1,22 @@
+Collins Rakowski (811261111)
+
+    Pointer Practice Part 1
+    a. char = 1
+    b. char * = 8
+    c. short = 2
+    d. short * = 8
+    e. int = 4
+    f. int * = 8
+    g. long = 8
+    h. long * = 8
+    i. int ** = 8
+    j. int *** = 8
+
+    Part 2
+    a. 0x7fff094ff10c, 0x7fffdf1c996c, 0x7fffb10071fc
+    b. 0x7fff094ff110, 0x7fffdf1c9970, 0x7fffb1007200
+    c. 0x7fff094ff114, 0x7fffdf1c9974, 0x7fffb1007204
+    d. 0x7fff094ff118, 0x7fffdf1c9978, 0x7fffb1007208
+    e. 0x7fff094ff11c, 0x7fffdf1c997c, 0x7fffb100720c
+    f. Yes, the output is different every run. The memory location  that is being used to store the values
+    is being changed; Therefore, the hexadecimal value changes every time the code runs.

@@ -1,0 +1,36 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+
+
+int main(int argc, char *argv[]) {
+
+    for ( int i = 1; i < argc; i++) {
+        arg
+    }
+    /*
+    int iflag = 0;
+    enum { WORD_MODE, LINE_MODE } op_mode = WORD_MODE;  // Default set
+    int opt;
+
+    while ((opt = getopt(argc, argv, "ilw") != -1)) {
+
+    switch (opt) {
+    case 'i':
+        iflag = 1;
+        break;
+    case 'l':
+        op_mode = LINE_MODE;
+        break;
+    case 'w':
+        op_mode = WORD_MODE;
+        break;
+    default:
+        fprintf(stderr, "Usage: %s [-ilw] [file ...]\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+    }*/
+
+}

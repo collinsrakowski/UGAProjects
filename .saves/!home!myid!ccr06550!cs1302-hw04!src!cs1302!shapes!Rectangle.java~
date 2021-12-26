@@ -1,0 +1,32 @@
+package cs1302.shapes;
+
+/**
+ * Holds the instance variables for a rectangle as well as the
+ * constructor methods and the methods to get the area and perimeter.
+ */
+public class Rectangle extends Shape {
+
+    private double height;
+    private double width;
+
+    public Rectangle( double height, double width ) {
+        setName("Rectangle");
+        this.height = height;
+        this.width = width;
+    } // rectangle constructor
+
+    @Override //for get area
+    public double getArea() {
+        double area;
+        area = height * width;
+        return area;
+    } // get area
+
+    @Override // for get perimeter
+    public double getPerimeter() {
+        double perimeter;
+        perimeter = (height * 2) + (width * 2);
+        return perimeter;
+    } // get perimeter
+
+} // rectangle class
