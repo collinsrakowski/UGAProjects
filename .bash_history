@@ -1,42 +1,3 @@
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-./head -n 4
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-./head -n
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-./head -n
-gcc -Wall -pedantic-errors -o head head.c
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
-emacs head.c 
-gcc -Wall -pedantic-errors -o head head.c
 emacs head.c 
 gcc -Wall -pedantic-errors -o head head.c
 ./head -n
@@ -998,3 +959,42 @@ exit
 ls
 pwd
 exit
+ls
+cd emacs cs1302-minesweeper-alpha/
+cd cs1302-minesweeper-alpha/
+ls
+cd ..
+Rakowski-Collins-p1
+cd Rakowski-Collins-p1
+ls
+cat README 
+emacs Matrix.cpp 
+cd ..
+git init -b main
+git add . && git commit -m "initial commit"
+gh repo create
+gh auth login
+gh repo create
+gh auth login
+ls
+git commit
+git
+git push
+ls
+git remote add origin https://github.com/collinsrakowski/UGAProjects.git
+git branch -M main
+git push -u origin main
+git remote add origin https://github.com/collinsrakowski/UGAProjects.git
+git branch -M main
+git push -u origin main
+git branch -M main
+git push -u origin main
+ls
+exit
+ls
+ls CodingProjects 
+ls
+emacs CodingProjects 
+cat CodingProjects 
+ls
+ls CodingProjects 
